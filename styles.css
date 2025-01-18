@@ -124,8 +124,8 @@ body {
     transform: scale(0); /* Fully scaled down */
     opacity: 0; /* Fully transparent */
   }
-  60% {
-    transform: scale(1.05); /* Slightly larger than normal */
+  65% {
+    transform: scale(1.02); /* Slightly larger than normal */
     opacity: 1; /* Fully visible */
   }
   100% {
@@ -383,6 +383,7 @@ body {
     margin-right: 9%;
     margin-top: -8%;
     cursor: pointer;
+    margin-bottom: 2%;
 }
 
 
@@ -431,6 +432,7 @@ body {
             "experience";
     }
 }
+
 
 
 button {
@@ -602,6 +604,7 @@ button {
     color: #757575;
     text-transform: uppercase;
     letter-spacing: 6px;
+    margin-top: -2%;
 }
   
 .contact-wrapper {
@@ -623,7 +626,7 @@ button {
   }
   
 
-  
+
   .send-button {
     margin-top: 15px;
     height: 34px;
@@ -658,12 +661,12 @@ button {
   .contact-list {
     list-style-type: none;
     margin-left: -30px;
-    padding-right: 20px;
   }
   
   .list-item {
     line-height: 4;
     color: #aaa;
+    margin-left: 10%;
   }
   
   .contact-text {
@@ -676,9 +679,6 @@ button {
     margin-left: 62px;
   }
 
-  .phone {
-    margin-left: 56px;
-  }
   
   .gmail {
     margin-left: 53px;
@@ -695,6 +695,10 @@ button {
     text-decoration: none;
   }
   
+.contact-list .list-item i {
+  margin-left:5%;
+}
+
   
   /* Social Media Icons */
   .social-media-list {
@@ -760,11 +764,11 @@ button {
   }
   
   hr {
-    border-color: rgba(255,255,255,.6);
+    border-color: #ffffff99;
   }
   
   /* Begin Media Queries*/
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 850px) { 
     .contact-wrapper {
       display: flex;
       flex-direction: column;
@@ -1070,5 +1074,43 @@ textarea {
     }
 }
 
+/* Keyframes for the fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Move the card up from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+
+
+/* Keyframes for fade-up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hidden by default */
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When the element is visible, apply the animation */
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
