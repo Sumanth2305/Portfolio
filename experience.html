@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - ChirpStack Configuration</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+      color: #e0e0e0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-family: Times, Times New Roman, serif;
+        text-align: center;
+        color: #c4c4c4;
+    }
+
+    h2 {
+        font-family: Times, Times New Roman, serif;
+      color: #a9a9a9;
+      border-bottom: 2px solid #c4c4c4;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-family: 'URW Chancery L', cursive;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    li {
+        font-family: 'URW Chancery L', cursive;
+      margin-bottom: 10px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .arrow:before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      border: solid white;
+      border-width: 2px 0 0 2px;
+      top: 50%;
+      left: 2px;
+      transform-origin: 0% 0%;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .arrow:after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 2px;
+      background-color: white;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .arrow:hover:after {
+      opacity: 1;
+    }
+
+    .arrow:hover:before {
+      transform: rotate(-45deg) scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html">
+    <div class="arrow"></div>
+  </a>
+  <div class="container">
+    <h1>ChirpStack Configuration Experience</h1>
+
+    <h2>Overview</h2>
+    <p>The objective of this document is to show the process of configuring the ChirpStack Network Server on both Ubuntu 22.04 which runs inside a Virtual Machine and on Windows OS. This process involves configuring the ChirpStack Network Server to which a gateway will be initialized. Subsequently, a device will be assigned to this gateway to facilitate uplink and downlink operations.</p>
+
+    <p>The data from these operations will be stored in an InfluxDB database which will be integrated into ChirpStack Network Server. This database is configured with Grafana to enable the visualization and analysis of the data on web pages. These Grafana dashboards are later embedded into an application, which will also be used to send downlinks to LoRa Devices through a UI.</p>
+
+    <h2>LoRaWAN Specification</h2>
+    <p>The LoRaWAN specification is a Low Power, Wide Area (LPWA) networking protocol designed to wirelessly transmit data of devices. LoRa devices are classified into different classes based on their power consumption and communication capabilities:</p>
+    <ul>
+      <li><strong>Class A:</strong> Devices send an uplink and “listen” for a message from the network one and two seconds after the uplink before going back to sleep.</li>
+      <li><strong>Class B:</strong> Devices wake up and open a receive window to listen for a downlink according to a configurable, network-defined schedule.</li>
+      <li><strong>Class C:</strong> Devices constantly listen for downlink messages from the network, except when transmitting data.</li>
+    </ul>
+
+    <h2>Gateways</h2>
+    <p>Devices are connected to gateways to send data. Gateways serve as intermediary devices that receive and transmit data between LoRa devices and the internet. They can be classified into:</p>
+    <ul>
+      <li><strong>Indoor Gateways:</strong> Designed for use within buildings, featuring less robust enclosures and lacking weatherproofing.</li>
+      <li><strong>Outdoor Gateways:</strong> Built to withstand outdoor conditions with sturdy, waterproof enclosures, often supporting Power over Ethernet (PoE).</li>
+    </ul>
+
+    <h2>ChirpStack Network Server</h2>
+    <p>The LoRaWAN Network Server is at the core of every LoRaWAN Network, enabling connectivity, management, and monitoring of devices, gateways, and end-user applications. ChirpStack, an open-source LoRaWAN Network Server, is one such network server that allows the setup of private or public LoRaWAN networks. It provides:</p>
+    <ul>
+      <li>A web interface for managing gateways, devices, and tenants.</li>
+      <li>Integration with databases, cloud providers, and services to handle device data.</li>
+      <li>A gRPC-based API for extending its capabilities.</li>
+    </ul>
+
+    <h2>Architecture diagram</h2>
+    <img src="UI_dark.drawio" alt="Application UI" />
+  </div>
+</body>
+</html>

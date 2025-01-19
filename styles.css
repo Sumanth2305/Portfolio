@@ -158,7 +158,7 @@ body {
     width:80%;
 }
 .card p {
-  font-family: 'URW Chancery L', cursive; /* Replace with your chosen font */
+  font-family: 'URW Chancery L', cursive;
 }
 
 .card h2 {
@@ -1086,8 +1086,6 @@ textarea {
   }
 }
 
-
-
 /* Keyframes for fade-up */
 @keyframes fadeUp {
   from {
@@ -1107,10 +1105,46 @@ textarea {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* When the element is visible, apply the animation */
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: transparent; /* Ensure no conflicting background color */
+  overflow: hidden; /* Ensure child elements stay within the button */
+  box-sizing: border-box; /* Avoid padding issues */
+}
+
+.btn__background {
+  position: absolute;
+  width: 100%; /* Match the button's width */
+  height: 100%; /* Match the button's height */
+  background-color: #ffffff; /* Set your white background */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it stays behind the button text */
+}
+
+.btn__inner {
+  z-index: 1; /* Ensure the text stays above the background */
+}
+.btn, .btn * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+
 
 

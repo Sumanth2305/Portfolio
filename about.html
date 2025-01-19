@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hey Everyone! </title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #0e0e0e, #2b2b2b);
+    color: #ffffff;
+    padding: 20px;
+    }
+    .mySlides {
+      display: none;
+    }
+    .w3-left, .w3-right, .w3-badge {
+      cursor: pointer;
+    }
+    .w3-badge {
+      height: 13px;
+      width: 13px;
+      padding: 0;
+    }
+    #about {
+      text-align: center;
+      padding: 20px;
+    }
+    #hobbies {
+      text-align: center;
+      padding: 20px;
+    }
+    .hobby-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+.arrow {
+position: absolute;
+top: 2%; /* Distance from the top of the screen */
+left: 20px; 
+width: 30px;
+height: 30px;
+cursor: pointer;
+overflow: hidden;
+transition: 0.3s;
+}
+
+.arrow:before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: solid white;
+  border-width: 2px 0 0 2px;
+  top: 50%;
+  left: 2px;
+  transform-origin: 0% 0%;
+  transform: rotate(-45deg); /* Arrowhead */
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%); /* Horizontal line */
+  opacity: 0; /* Invisible by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.arrow:hover:after {
+  opacity: 1; /* Visible on hover */
+}
+
+.arrow:hover:before {
+  transform: rotate(-45deg) scale(1.1); /* Optional scaling effect for the arrowhead */
+}
+
+
+  </style>
+</head>
+<body>
+  <a href="index.html">
+  <div class="arrow"></div>
+</a>
+
+<!-- About Section -->
+<div id="about" class="w3-container">
+  <h1>Hey Everyone!</h1>
+  <p>
+    I'm Sai Sumanth Chand, from Hyderabad, Telangana. I am deeply passionate about data science, technology, and coding, and I believe in continuous learning to stay ahead in this ever-evolving field. 
+    Whenever I have free time, I explore new topics through online courses to sharpen my skills. So far, I’ve completed 
+    <strong>“Ask Questions to Make Data-Driven Decisions”</strong> by Google, which introduced me to decision-making frameworks, and 
+    <strong>“Data Analysis and Visualization with Power BI”</strong> by Microsoft, where I learned to create impactful dashboards and visualize data effectively.
+    Apart from online learning, I dedicate a significant amount of time to solving problems on platforms like <strong>LeetCode</strong> to enhance my problem-solving skills and stay prepared for challenges in the tech industry. 
+  </p>
+
+  <p>When I’m not online, I embrace my love for travel, exploring new places, and capturing the beauty of the world through photography. 
+    Photography allows me to connect with nature and people, and I find immense joy in documenting moments and experiences. Check put some of my work below!</p>
+</div>
+
+  <!-- Photography Slideshow -->
+  <div class="hobby-section">
+    <div class="w3-content w3-display-container" style="max-width:350px">
+      <img class="mySlides" src="5.jpeg" style="width:100%">
+      <img class="mySlides" src="2.jpeg" style="width:100%">
+      <img class="mySlides" src="3.jpeg" style="width:100%">
+      <img class="mySlides" src="4.jpeg" style="width:100%">
+      <img class="mySlides" src="1.jpeg" style="width:100%">
+      <img class="mySlides" src="6.jpeg" style="width:100%">
+      <img class="mySlides" src="7.jpeg" style="width:100%">
+      <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+        <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+        <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Working Out Section -->
+  <div class="hobby-section">
+    <p>Staying fit is an essential part of my life, and I believe in maintaining a balanced routine that blends both basketball and regular workouts. 
+      Basketball keeps me active while sharpening my teamwork, coordination, and strategic thinking. It's not only a fun way to stay in shape, but it 
+      also challenges me to constantly improve my agility and endurance.
+      In addition to basketball, I focus on strength training, cardio, 
+      and flexibility exercises to complement my fitness journey. Weightlifting builds my power, 
+      while cardio helps me maintain overall stamina. Stretching keeps me flexible and aids in recovery. 
+      Together, these elements fuel both my athletic performance and overall well-being, helping me stay 
+      energized and motivated in every aspect of life.</p>
+    <img src="workout.jpg" alt="Working Out" class="w3-image" style="max-width:150px; border-radius:10px">
+  </div>
+</div>
+
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-white";
+  }
+</script>
+
+</body>
+</html>

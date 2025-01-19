@@ -22,9 +22,60 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for a nice effect */
             background-color: #ffffff; /* Optional: Background behind the PDF */
         }
-    </style>
+
+.arrow {
+
+  position: absolute;
+  top: 2%; /* Distance from the top of the screen */
+  left: 20px; 
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.arrow:before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: solid white;
+  border-width: 2px 0 0 2px;
+  top: 50%;
+  left: 2px;
+  transform-origin: 0% 0%;
+  transform: rotate(-45deg); /* Arrowhead */
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%); /* Horizontal line */
+  opacity: 0; /* Invisible by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.arrow:hover:after {
+  opacity: 1; /* Visible on hover */
+}
+
+.arrow:hover:before {
+  transform: rotate(-45deg) scale(1.1); /* Optional scaling effect for the arrowhead */
+}
+        
+</style>
 </head>
 <body>
+    <a href="index.html">
+        <div class="arrow"></div>
+      </a>
     <embed src="Sumanth_Resume.docx (1).pdf" type="application/pdf" />
 </body>
 </html>

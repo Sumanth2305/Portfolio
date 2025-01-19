@@ -23,3 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Observe each fade-up element
   fadeUpElements.forEach((el) => observer.observe(el));
 });
+
+function goToExperiencePage() {
+  window.location.href = "experience.html";
+}
+
+function showPopup(event) {
+  event.preventDefault();  // Prevent form submission so that popup can show first
+  
+  // Show the popup
+  document.getElementById('popup').style.display = 'block';
+
+  // Send the form data using FormSubmit's action URL
+  setTimeout(function() {
+      document.getElementById('contact-form').submit(); // Submit the form after the popup is displayed
+  }, 1500); // Delay to give time for popup to show
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none'; // Hide the popup
+}
