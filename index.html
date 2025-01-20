@@ -6,6 +6,7 @@
   <title>Sai Sumanth Chand Anne Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="script.js"></script>
 </head>
 <body>
@@ -118,40 +119,51 @@
   <!-- Left contact page --> 
     
   <form id="contact-form" action="https://formsubmit.co/sumanthchand1234@gmail.com" method="POST" class="form-horizontal" role="form" onsubmit="showPopup(event)">
-       
+    <!-- Hidden input for FormSubmit security -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next"> <!-- Replace with your success page or thank you page -->
+  
     <div class="form-group">
-        <div class="col-sm-12 fade-up">
-            <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="emailbox fade-up">
-            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
-        </div>
-    </div>
-
-    <textarea class="form-control fade-up" rows="10" placeholder="MESSAGE" name="message" required></textarea>
-    
-    <button type="submit" class="btn">
-        <span class="btn__inner fade-up">
-            <span class="btn__label fade-up" data-label="Get in touch" data-hover="Go for it 💪">
-                Get in touch
-                
-                <span class="btn__label__background"></span>
-            </span>
-        </span>
-        <span class="btn__background fade-up"></span>
-    </button>
-    
-</form>
-
-    <div id="popup" style="display:none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); color: white; text-align: center; padding: 100px;">
-      <div style="background: #333; padding: 20px; border-radius: 5px;">
-          <p>I'll get in touch with you as soon as possible!</p>
-          <button onclick="closePopup()" style="padding: 10px 20px; background: #ff6600; border: none; color: white; font-size: 16px; cursor: pointer;">Close</button>
+      <div class="col-sm-12 fade-up">
+        <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
       </div>
-  </div>
+    </div>
+  
+    <div class="form-group">
+      <div class="emailbox fade-up">
+        <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+      </div>
+    </div>
+  
+    <textarea class="form-control fade-up" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+  
+    <!-- Submit Button -->
+    <a href="#" class="btn" id="submitBtn">
+      <span class="btn__inner">
+        <span class="btn__label" data-label="Get in touch" data-hover="Go for it 💪">
+          Get in touch
+          <span class="btn__label__background"></span>
+        </span>
+      </span>
+      <span class="btn__background"></span>
+    </a>
+
+    <div
+      id="popup"
+      style="display: none; position: fixed; bottom: 20px; left: 20px; background: #000; color: #fff; padding: 20px; border: 1px solid #666; border-radius: 5px; z-index: 1000; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); text-align: center; max-width: 300px;"
+    >
+      <p>Your message has been sent successfully! I'll try to reach asap :)</p>
+      <button
+        id="closePopup"
+        type="button"
+        style="padding: 5px 10px; border: none; background-color: #2e2e2e; color: #fff; margin-top: 1px; border-radius: 5px; cursor: pointer;"
+      >
+        Close
+      </button>
+    </div>
+  </form>
+  
+
     
   <!-- Left contact page --> 
     
@@ -162,30 +174,33 @@
           <li class="list-item fade-up"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">sumanthchand1234@gmail.com</a></span></i></li>
         </ul>
 
-        <hr>
-        <ul class="social-media-list">
-          <li><a href="https://github.com/Sumanth2305" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </a>
+        <hr class="custom-hr">
+
+        <ul class="social-media-list" style="list-style: none; display: flex; justify-content: center; gap: 15px; padding: 0; margin: 0;">
+          <li>
+            <button onclick="window.open('https://github.com/Sumanth2305', '_blank')" 
+              style="background: none; border: none; cursor: pointer; font-size: 40px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s ease, transform 0.2s ease; margin-left: 10px;">
+              <i class="fa fa-github fade-up" aria-hidden="true"></i>
+            </button>
           </li>
-          <li><a href="https://www.linkedin.com/in/sai-sumanth-chand/" target="_blank" class="contact-icon fade-up">
-            <i class="fa fa-linkedin fade-up" aria-hidden="true"></i></a>
+          <li>
+            <button onclick="window.open('https://www.linkedin.com/in/sai-sumanth-chand/', '_blank')" 
+              style="background: none; border: none; cursor: pointer; font-size: 40px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s ease, transform 0.2s ease; margin-left: 10px;">
+              <i class="fa fa-linkedin fade-up" aria-hidden="true"></i>
+            </button>
           </li>
-          <li><a href="https://www.instagram.com/sai_sumanth_chand/" target="_blank" class="contact-icon fade-up">
-            <i class="fa fa-instagram fade-up" aria-hidden="true"></i></a>
-          </li>       
+          <li>
+            <button onclick="window.open('https://www.instagram.com/sai_sumanth_chand/', '_blank')" 
+              style="background: none; border: none; cursor: pointer; font-size: 40px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s ease, transform 0.2s ease; margin-left: 10px;">
+              <i class="fa fa-instagram fade-up" aria-hidden="true"></i>
+            </button>
+          </li>
         </ul>
+
         <hr>
       </div>
   </div>
 </section>  
-  
-  
-  </main>
-
-  <a href="https://github.com/Sumanth2305" class="contact-icon">
-    <i class="fa fa-github" aria-hidden="true"></i>
-  </a>
-  
+</main>
 </body>
 </html>

@@ -28,18 +28,83 @@ function goToExperiencePage() {
   window.location.href = "experience.html";
 }
 
-function showPopup(event) {
-  event.preventDefault();  // Prevent form submission so that popup can show first
-  
+function showPopup() {
   // Show the popup
-  document.getElementById('popup').style.display = 'block';
-
-  // Send the form data using FormSubmit's action URL
-  setTimeout(function() {
-      document.getElementById('contact-form').submit(); // Submit the form after the popup is displayed
-  }, 1500); // Delay to give time for popup to show
+  const popup = document.getElementById('popup');
+  popup.style.display = 'block';
 }
 
+
+// Handle form submission
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const form = document.getElementById("contact-form");
+  const popup = document.getElementById("popup");
+
+  // Validate the form manually
+  if (!form.checkValidity()) {
+    // Trigger browser's native validation messages
+    form.reportValidity();
+    return; // Stop execution if the form is invalid
+  }
+
+  // If the form is valid, proceed with submission
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Show the popup
+        popup.style.display = "block";
+
+        // Clear form fields
+        form.reset();
+      } else {
+        console.error("Form submission failed:", response);
+        alert("An error occurred. Please try again.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again.");
+    });
+}
+
+// Close the popup
 function closePopup() {
-  document.getElementById('popup').style.display = 'none'; // Hide the popup
+  const popup = document.getElementById("popup");
+  popup.style.display = "none"; // Hide the popup
 }
+
+// Attach event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  const submitBtn = document.getElementById("submitBtn");
+  const closePopupBtn = document.getElementById("closePopup");
+
+  // Trigger form submission on link click
+  submitBtn.addEventListener("click", (event) => handleSubmit(event));
+
+  // Close popup on button click
+  closePopupBtn.addEventListener("click", () => closePopup());
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Select all social media links
+  const socialMediaLinks = document.querySelectorAll('.social-media-list li a');
+
+  // Add click event listener to each link
+  socialMediaLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const url = link.getAttribute('href'); // Get the href attribute
+      if (url) {
+        window.open(url, '_blank'); // Open the URL in a new tab
+      } else {
+        console.error('No URL found for this link.');
+      }
+    });
+  });
+});
+
