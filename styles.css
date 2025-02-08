@@ -421,13 +421,13 @@ body {
     border: 1.5px solid rgb(27, 19, 19);
     text-align: center;
     grid-area: experience;
-    margin-left: -3%;
     margin-right: 8%;
-    margin-top: -13%;
+    margin-top: 10%;
     cursor: pointer;
     margin-bottom: 2%;
     position: relative;
     bottom: 70%;
+
 }
 
 
@@ -479,7 +479,7 @@ body {
 
 .project-button {
   position: relative; 
-  bottom: 10%;
+  top: 10.9%;
   display: block;
 }
 
