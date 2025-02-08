@@ -20,6 +20,7 @@
             align-items: center;
             min-height: 100vh;
             flex-direction: column;
+            font-family: 'URW Chancery L', cursive;
         }
 
         h1 {
@@ -27,6 +28,7 @@
             margin-bottom: 20px;
             font-weight: 600;
             text-align: center;
+            font-family: Times, Times New Roman, serif;
         }
 
         .projects-container {
@@ -79,7 +81,7 @@
             width: 90%;
             max-width: 1000px;
             display: flex;
-            gap: 10px;
+            gap: 20px;
             padding: 30px;
             align-items: center;
             transform: scale(0.8);
@@ -122,8 +124,7 @@
             color: white;
         }
 
-        .arrow {
-
+        .arrow {     
 position: absolute;
 top: 2%; /* Distance from the top of the screen */
 left: 20px; 
@@ -251,38 +252,38 @@ transform: rotate(-45deg) scale(1.1); /* Optional scaling effect for the arrowhe
         const projects = {
             1: { 
                 title: "Research Collaborator Recommendation System", 
-                description: "This is a detailed description of Project 1.", 
+                description: "Developed a Research Collaboration Recommendation System (RCRS) using a graph analytics approach, leveraging author features like research areas, h-index, and i10-index. Extracted data from open APIs to construct a collaboration graph and implemented SVD with cosine similarity, Link Prediction, and Node2Vec. Achieved the best performance with Node2Vec, yielding an RMSE of 0.18 and MAPE of 24.6.", 
                 image: "RCRS_fig.png",
-                timeframe: "Jan 2024 - Mar 2024",
-                tech: "React, Node.js, MongoDB"
+                timeframe: "August 2023 - May 2024",
+                tech: "SVD, Link prediction, Node2vec, GCN, Gephi, Matplot"
             },
             2: { 
-                title: "Project 2", 
-                description: "This is a detailed description of Project 2.", 
+                title: "Flight Price Prediction", 
+                description: "Developed a flight price prediction system using multiple machine learning models. Conducted a comparative analysis, identifying Random Forest as the most accurate model with 98.9% accuracy, while KNN had the lowest at 85.6%", 
                 image: "flight_fig.png",
-                timeframe: "Apr 2024 - Jun 2024",
-                tech: "Python, Flask"
+                timeframe: "September 2024 - December 2024",
+                tech: "KNN, MLP, Random Forest, Linear Regression, Decision Tree, Linear SVR, Matplot"
             },
             3: { 
-                title: "Project 3", 
-                description: "This is a detailed description of Project 3.", 
+                title: "Property Price Prediction", 
+                description: "Developed a property price prediction model based on property type and time series analysis. Conducted thorough data analysis using time series visualizations and achieved a prediction accuracy of 92%.", 
                 image: "property_fig.png",
-                timeframe: "Jul 2024 - Sep 2024",
-                tech: "Angular, Firebase"
+                timeframe: "November 2022 - January 2023",
+                tech: "ARIMA, Holt-Winters, Matplot"
             },
             4: { 
-                title: "Project 4", 
-                description: "This is a detailed description of Project 4.", 
+                title: "Smart Attendace based on Location", 
+                description: "Developed a smart attendance system for a university webpage with a complete frontend and backend. The system enables taking and modifying attendance based on subjects and is location-based using a Node.js module. It ensures high accuracy by considering location data up to nine decimal places", 
                 image: "attendance_fig.png",
-                timeframe: "Oct 2024 - Dec 2024",
-                tech: "Django, PostgreSQL"
+                timeframe: "March 2023 - July 2023",
+                tech: "EJS, Node JS, SQL, CSS"
             },
             5: { 
-                title: "Project 5", 
-                description: "This is a detailed description of Project 5.", 
+                title: "Weather Prediction", 
+                description: "Developed an RNN-based weather prediction model for both single-variate and multivariate forecasting. Successfully achieved accurate predictions and implemented valid evaluation metrics to assess model performance.", 
                 image: "weather_fig.png",
-                timeframe: "Jan 2025 - Mar 2025",
-                tech: "Vue.js, Express"
+                timeframe: "March 2023 - July 2023",
+                tech: "RNN, Matplot"
             }
         };
 
