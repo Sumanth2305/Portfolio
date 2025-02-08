@@ -421,6 +421,7 @@ body {
     border: 1.5px solid rgb(27, 19, 19);
     text-align: center;
     grid-area: experience;
+    margin-left: -3%;
     margin-right: 8%;
     margin-top: -13%;
     cursor: pointer;
