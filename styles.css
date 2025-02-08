@@ -152,6 +152,9 @@ body {
   margin-left: -7%; /* Adjust value as needed */
   margin-right: 8%;
   position: relative;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
 .education-title {
@@ -422,6 +425,8 @@ body {
     margin-top: -13%;
     cursor: pointer;
     margin-bottom: 2%;
+    position: relative;
+    bottom: 70%;
 }
 
 
@@ -469,6 +474,12 @@ body {
             "button"
             "experience";
     }
+}
+
+.project-button {
+  position: relative; 
+  bottom: 10%;
+  display: block;
 }
 
 
