@@ -51,7 +51,8 @@ h3 {
 }
 
 p{
-  font-family: 'URW Chancery L', cursive;
+  font-family: 'Brush Script MT', cursive;
+  font-size: medium;
 }
 
 body {
@@ -483,8 +484,6 @@ body {
   display: block;
 }
 
-
-
 button {
     grid-area: button;
     position: relative;
@@ -726,6 +725,7 @@ button {
   }
   
   .place {
+    color: whitesmoke;
     margin-left: 62px;
   }
 
@@ -801,10 +801,12 @@ button {
    
     
     .name, .email, textarea {
+      color: whitesmoke;
       width: 280px;
     } 
     
     .direct-contact-container {
+      color: whitesmoke;
       margin-top: 60px;
       max-width: 280px;
     }  
@@ -848,6 +850,7 @@ button {
     border: 2px solid #757575; /* Ensure consistent border styling */
     border-radius: 5px; /* Optional: Add smoother corners */
     margin-bottom: 2%;
+    color: whitesmoke;
 }
 
 /* Style for the email input */
@@ -859,6 +862,7 @@ button {
     border: 2px solid #757575; /* Ensure consistent border styling */
     border-radius: 5px; /* Optional: Add smoother corners */
     margin-bottom: 2%;
+    color: whitesmoke;
 }
 
 .form-control, 
@@ -873,6 +877,7 @@ textarea {
   border: 2px solid #757575;
   border-radius: 5px;
   letter-spacing: 1px;
+  color: whitesmoke;
 }
 
 
